@@ -19,10 +19,11 @@ export const Tabs = () => {
                 paddingTop: 5,
             },
             tabBarLabelStyle: {
-                fontSize:12,
+                fontSize:11,
+                fontFamily:'iran-sans'
             },
             tabBarInactiveTintColor: colors.gray,
-            tabBarActiveTintColor: colors.red
+            tabBarActiveTintColor: colors.red,
         })}
         >
             <Tab.Screen
@@ -32,7 +33,7 @@ export const Tabs = () => {
                     headerShown: false,
                     title: 'آگهی ها',
                     tabBarIcon: ({color, size}) => (
-                        <FontAwesome name="home" color={color} size={size}/>
+                        <FontAwesome name="home" color={color} size={20}/>
                     )
                 }}
             />
@@ -43,7 +44,7 @@ export const Tabs = () => {
                 options={{
                     title: 'دسته ها',
                     tabBarIcon: ({color, size}) => (
-                        <FontAwesome name="list" color={color} size={size}/>
+                        <FontAwesome name="list" color={color} size={20}/>
                     )
 
                 }}
@@ -55,7 +56,7 @@ export const Tabs = () => {
                 options={{
                     title: 'ثبت آگهی',
                     tabBarIcon: ({color, size}) => (
-                        <FontAwesome name="plus" color={color} size={size}/>
+                        <FontAwesome name="plus" color={color} size={20}/>
                     )
                 }}
             />
@@ -66,7 +67,7 @@ export const Tabs = () => {
                 options={{
                     title: 'چت',
                     tabBarIcon: ({color, size}) => (
-                        <FontAwesome name="comments" color={color} size={size}/>
+                        <FontAwesome name="comments" color={color} size={20}/>
                     ),
                 }}
             />
@@ -77,7 +78,7 @@ export const Tabs = () => {
                 options={{
                     title: 'دیوار من',
                     tabBarIcon: ({color, size}) => (
-                        <FontAwesome name="user" color={color} size={size}/>
+                        <FontAwesome name="user" color={color} size={20}/>
                     )
                 }}
             />
