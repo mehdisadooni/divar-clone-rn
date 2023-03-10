@@ -61,7 +61,7 @@ export const Tabs = () => {
                 options={{
                     title: 'ثبت آگهی',
                     tabBarIcon: ({color, size}) => (
-                        <FontAwesome name="plus" color={color} size={20}/>
+                        <FontAwesome name="plus-circle" color={color} size={20}/>
                     )
                 }}
             />
