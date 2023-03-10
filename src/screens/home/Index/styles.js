@@ -5,7 +5,6 @@ import {fonts} from "../../../utils/fonts";
 export const styles = StyleSheet.create({
     headerContainer: {
         backgroundColor: '#eae9e9',
-        height: 100
     },
     searchContainer: {
         borderRadius:4,
@@ -45,5 +44,7 @@ export const styles = StyleSheet.create({
         paddingLeft:15,
         alignSelf: 'center',
     },
-    categoriesContainer: {},
+    categoriesContainer: {
+        marginTop:10
+    },
 })

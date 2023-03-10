@@ -1,11 +1,21 @@
-import {View, Text} from "react-native";
+import {View, Text, FlatList} from "react-native";
 import React from "react";
 import {styles} from "./styles";
 import {SafeAreaView} from "react-native-safe-area-context";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import {colors} from "../../../utils/colors";
+import {CATEGORIES} from "../../../Data/Categories";
+import CategoryBox from "../../../components/CategoryBox";
 
 const HomeIndex = () => {
+
+    const renderCategoryItem = ({item, index}) => (
+        <CategoryBox
+            {...item}
+            onPress={() => console.log(item?.id)}
+            isFirst={index === 0}/>
+    )
+
     return (
         <SafeAreaView>
             <View style={styles.headerContainer}>
@@ -22,7 +32,15 @@ const HomeIndex = () => {
                 </View>
 
                 <View style={styles.categoriesContainer}>
-
+                    <FlatList
+                        horizontal
+                        snapToStart={true}
+                        showsHorizontalScrollIndicator={false}
+                        style={styles.list}
+                        data={CATEGORIES}
+                        renderItem={renderCategoryItem}
+                        keyExtractor={(item, index) => String(index)}
+                    />
                 </View>
 
             </View>
