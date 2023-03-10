@@ -1,4 +1,4 @@
-import {View, Text, FlatList} from "react-native";
+import {View, Text, FlatList, Pressable} from "react-native";
 import React from "react";
 import {styles} from "./styles";
 import {SafeAreaView} from "react-native-safe-area-context";
@@ -7,7 +7,7 @@ import {colors} from "../../../utils/colors";
 import {CATEGORIES} from "../../../Data/Categories";
 import CategoryBox from "../../../components/CategoryBox";
 
-const HomeIndex = () => {
+const HomeIndex = ({navigation}) => {
 
     const renderCategoryItem = ({item, index}) => (
         <CategoryBox
@@ -20,10 +20,13 @@ const HomeIndex = () => {
         <SafeAreaView>
             <View style={styles.headerContainer}>
                 <View style={styles.searchContainer}>
-                    <View style={styles.placeholder}>
+                    <Pressable
+                        onPress={() => navigation.navigate('SearchModal')}
+                        style={styles.placeholder}
+                    >
                         <FontAwesome name='search' color={colors.gray} size={20}/>
                         <Text style={styles.placeholderText}>جستجو در همه ی آگهی ها</Text>
-                    </View>
+                    </Pressable>
                     <View style={styles.location}>
                         <View style={styles.verticalLine}></View>
                         <Text style={styles.locationText}>تهران</Text>

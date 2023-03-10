@@ -1,5 +1,4 @@
 import React from "react";
-import HomeIndex from "../screens/home/Index";
 import CategoriesIndex from "../screens/categories/Index";
 import AddAdvertisingIndex from "../screens/addAdvertising/Index";
 import ChatIndex from "../screens/chat/Index";
@@ -7,6 +6,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {colors} from "../utils/colors";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import {AccountStack} from "./stacks/AccountStack";
+import {HomeStack} from "./stacks/HomeStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +33,7 @@ export const Tabs = () => {
         >
             <Tab.Screen
                 name={'Home'}
-                component={HomeIndex}
+                component={HomeStack}
                 options={{
                     title: 'آگهی ها',
                     headerShown: false,
