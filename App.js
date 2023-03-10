@@ -4,6 +4,8 @@ import {I18nManager} from "react-native";
 import {Routes} from "./src/routes";
 import * as Font from 'expo-font';
 import * as SplashScreen from "expo-splash-screen";
+import 'react-native-gesture-handler';
+
 
 
 SplashScreen.preventAutoHideAsync().then(r => console.log(r));

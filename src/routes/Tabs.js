@@ -3,38 +3,43 @@ import HomeIndex from "../screens/home/Index";
 import CategoriesIndex from "../screens/categories/Index";
 import AddAdvertisingIndex from "../screens/addAdvertising/Index";
 import ChatIndex from "../screens/chat/Index";
-import MyDivarIndex from "../screens/myDivar/Index";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {colors} from "../utils/color";
+import {colors} from "../utils/colors";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import {AccountStack} from "./stacks/AccountStack";
 
 const Tab = createBottomTabNavigator();
 
 export const Tabs = () => {
     return (
-        <Tab.Navigator screenOptions={({route}) => ({
-            tabBarStyle: {
-                backgroundColor: colors.lightGray,
-                paddingBottom: 5,
-                paddingTop: 5,
-            },
-            tabBarLabelStyle: {
-                fontSize:11,
-                fontFamily:'iran-sans'
-            },
-            tabBarInactiveTintColor: colors.gray,
-            tabBarActiveTintColor: colors.red,
-        })}
+        <Tab.Navigator
+            initialRouteName='HomePage'
+            screenOptions={({route}) => ({
+                tabBarStyle: {
+                    backgroundColor: colors.lightGray,
+                    paddingBottom: 5,
+                    paddingTop: 5,
+                },
+                tabBarLabelStyle: {
+                    fontSize: 11,
+                    fontFamily: 'iran-sans'
+                },
+                headerTitleStyle: {
+                    fontFamily: 'iran-sans-bold',
+                },
+                tabBarInactiveTintColor: colors.gray,
+                tabBarActiveTintColor: colors.red,
+            })}
         >
             <Tab.Screen
                 name={'Home'}
                 component={HomeIndex}
                 options={{
-                    headerShown: false,
                     title: 'آگهی ها',
+                    headerShown: false,
                     tabBarIcon: ({color, size}) => (
                         <FontAwesome name="home" color={color} size={20}/>
-                    )
+                    ),
                 }}
             />
 
@@ -74,12 +79,13 @@ export const Tabs = () => {
 
             <Tab.Screen
                 name={'MyDivar'}
-                component={MyDivarIndex}
+                component={AccountStack}
                 options={{
                     title: 'دیوار من',
+                    headerShown: false,
                     tabBarIcon: ({color, size}) => (
                         <FontAwesome name="user" color={color} size={20}/>
-                    )
+                    ),
                 }}
             />
 
