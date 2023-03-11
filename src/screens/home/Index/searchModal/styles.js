@@ -3,7 +3,7 @@ import {StyleSheet} from "react-native";
 export const styles = StyleSheet.create({
     searchBox: {
         height: 50,
-        backgroundColor: '#cccc',
+        backgroundColor: '#eae9e9',
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal:10

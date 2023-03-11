@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 export const HomeStack = () => {
     return (
         <Stack.Navigator
-            screenOptions={() => ({
+            screenOptions={({route}) => ({
                 headerTitleStyle: {
                     fontFamily: fonts.iranSansBold,
                 },
@@ -21,16 +21,6 @@ export const HomeStack = () => {
                     name="HomeIndex"
                     component={HomeIndex}
                     options={{title: 'آگهی ها'}}
-                />
-            </Stack.Group>
-
-            <Stack.Group >
-                <Stack.Screen
-                    name="SearchModal"
-                    component={SearchModal}
-                    options={{
-                        title: 'تنظیمات',
-                    }}
                 />
             </Stack.Group>
 

@@ -34,6 +34,7 @@ export const Tabs = () => {
             <Tab.Screen
                 name={'Home'}
                 component={HomeStack}
+
                 options={{
                     title: 'آگهی ها',
                     headerShown: false,
