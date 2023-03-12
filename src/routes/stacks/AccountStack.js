@@ -3,6 +3,7 @@ import {createStackNavigator} from "@react-navigation/stack";
 import {fonts} from "../../utils/fonts";
 import AccountIndex from "../../screens/account/index";
 import SettingsIndex from "../../screens/account/settings/index";
+import DepositTopTabs from "../DepositTopTabs";
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ export const AccountStack = () => {
                 headerTitleStyle: {
                     fontFamily: fonts.iranSansBold,
                 },
+                headerStyle: {backgroundColor: '#eae9e9'},
             })}
         >
             <Stack.Screen
@@ -28,7 +30,6 @@ export const AccountStack = () => {
                     title: 'تنظیمات',
                 }}
             />
-
         </Stack.Navigator>
     )
 }

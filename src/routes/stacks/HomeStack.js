@@ -14,6 +14,7 @@ export const HomeStack = () => {
                     fontFamily: fonts.iranSansBold,
                 },
                 headerShown: false,
+                headerStyle: { backgroundColor: '#eae9e9' },
             })}
         >
             <Stack.Group>

@@ -5,7 +5,7 @@ import AccountMenu from "../../../components/AccountItem";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import {colors} from "../../../utils/colors";
 
-const AccountIndex = () => {
+const AccountIndex = ({navigation}) => {
 
     let user;
     const [refreshing, setRefreshing] = useState(false);
@@ -84,15 +84,15 @@ const AccountIndex = () => {
                 />
 
                 <AccountMenu
-                    onPress={() => props.navigation.navigate({routeName: 'IndexSetting'})}
+                    onPress={() => navigation.navigate({routeName: 'IndexSetting'})}
                     label="تنظیمات"
                     icon={<FontAwesome name='gear' size={20} color={'rgba(38,38,38,0.56)'}/>}
                 />
             </View>
 
             <View style={styles.section}>
-
                 <AccountMenu
+                    onPress={() => navigation.navigate('DepositTopTabs')}
                     label="امکان بیعانه"
                     icon={<FontAwesome name='newspaper-o' size={20} color={'rgba(38,38,38,0.56)'}/>}
                 />
