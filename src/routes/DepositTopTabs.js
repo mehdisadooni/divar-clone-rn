@@ -10,7 +10,7 @@ const DepositTopTabs = () => {
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarInactiveTintColor: colors.drkGray,
+                tabBarInactiveTintColor: colors.darkGray,
                 tabBarActiveTintColor: colors.red,
                 tabBarStyle: {
                     backgroundColor: '#eae9e9',
