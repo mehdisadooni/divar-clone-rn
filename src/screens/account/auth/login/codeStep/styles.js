@@ -6,12 +6,13 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f5f3f3',
-        paddingHorizontal:10,
+        paddingHorizontal: 10,
+        justifyContent: 'space-between'
     },
 
 
-    inputWrapper:{
-        marginTop:20,
+    inputWrapper: {
+        marginTop: 20,
     },
     input: {
         marginTop: 20,
@@ -30,12 +31,12 @@ export const styles = StyleSheet.create({
         borderColor: colors.red,
     },
 
-    labelText:{
-        fontFamily:fonts.iranSansBold
+    labelText: {
+        fontFamily: fonts.iranSansBold
     },
 
-    descriptionText:{
-        fontFamily:fonts.iranSans
+    descriptionText: {
+        fontFamily: fonts.iranSans
     },
 
     btn: {
@@ -52,12 +53,19 @@ export const styles = StyleSheet.create({
     },
 
     btnWrapper: {
-        flex:1,
-        justifyContent:'flex-end',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         backgroundColor: colors.lightGray,
-        paddingBottom:15,
-        alignItems: 'flex-end',
-
+        paddingBottom: 15,
+    },
+    countDownWrapper: {
+        textAlign: "center",
+        alignItems: "center",
+        justifyContent:"center",
+        flex:1
+    },
+    countDownText: {
+        fontFamily: fonts.iranSans,
+        color:colors.gray
     }
-
 })
