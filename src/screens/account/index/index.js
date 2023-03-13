@@ -28,7 +28,7 @@ const AccountIndex = ({navigation}) => {
             />}
         >
             <View style={styles.authSection}>
-                {!user ? (
+                {user ? (
                     <>
                         <Text style={styles.authSectionText}>
                             شما با شماره 09160886483 وارد شده
@@ -41,7 +41,7 @@ const AccountIndex = ({navigation}) => {
                             </TouchableOpacity>
                         </View>
                         <AccountMenu
-                            style={{marginTop:10}}
+                            style={{marginTop: 10}}
                             label="تایید هویت"
                             icon={<FontAwesome name='user' size={20} color={'rgba(38,38,38,0.56)'}/>}
                         />
@@ -53,7 +53,8 @@ const AccountIndex = ({navigation}) => {
                             خود
                             شوید.</Text>
                         <View style={styles.authSectionBtnContainer}>
-                            <TouchableOpacity style={styles.authSectionButton}>
+                            <TouchableOpacity style={styles.authSectionButton}
+                                              onPress={() => navigation.navigate('AuthStack')}>
                                 <Text style={styles.authSectionButtonText}>ورود به حساب</Text>
                             </TouchableOpacity>
                         </View>

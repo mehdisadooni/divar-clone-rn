@@ -5,6 +5,7 @@ import {createStackNavigator} from "@react-navigation/stack";
 import SearchModal from "../screens/home/Index/searchModal";
 import DepositTopTabs from "./DepositTopTabs";
 import {fonts} from "../utils/fonts";
+import {AuthStack} from "./stacks/AuthStack";
 
 const RootStack = createStackNavigator();
 const Stack = createStackNavigator();
@@ -37,6 +38,11 @@ export const Routes = () => {
                         title: 'امکان بیعانه (آزمایشی)',
                         headerShown: true
                     }}
+                />
+
+                <Stack.Screen
+                    name="AuthStack"
+                    component={AuthStack}
                 />
             </RootStack.Navigator>
         </NavigationContainer>

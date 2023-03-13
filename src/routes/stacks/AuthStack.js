@@ -1,13 +1,12 @@
 import React from "react";
 import {createStackNavigator} from "@react-navigation/stack";
 import {fonts} from "../../utils/fonts";
-import AccountIndex from "../../screens/account/index";
-import SettingsIndex from "../../screens/account/settings/index";
-import DepositTopTabs from "../DepositTopTabs";
+import CellphoneStep from "../../screens/account/auth/login/cellphoneStep";
+import CodeStep from "../../screens/account/auth/login/codeStep";
 
 const Stack = createStackNavigator();
 
-export const AccountStack = () => {
+export const AuthStack = () => {
     return (
         <Stack.Navigator
             screenOptions={() => ({
@@ -18,17 +17,15 @@ export const AccountStack = () => {
             })}
         >
             <Stack.Screen
-                name="AccountIndex"
-                component={AccountIndex}
-                options={{title: 'دیوار من'}}
+                name="CellphoneStep"
+                component={CellphoneStep}
+                options={{title: 'ورود به حساب کاربری'}}
             />
 
             <Stack.Screen
-                name="SettingsIndex"
-                component={SettingsIndex}
-                options={{
-                    title: 'تنظیمات',
-                }}
+                name="CodeStep"
+                component={CodeStep}
+                options={{title: 'ورود به حساب کاربری'}}
             />
 
         </Stack.Navigator>
