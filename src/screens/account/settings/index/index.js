@@ -1,12 +1,12 @@
 import React from "react";
 import {View, Text} from "react-native";
 
-const MyDivarIndex = () => {
+const SettingsIndex = () => {
     return (
         <View>
-            <Text>MyDivarIndex Screen</Text>
+            <Text>SettingsIndex Screen</Text>
         </View>
     )
 }
 
-export default MyDivarIndex
+export default SettingsIndex
