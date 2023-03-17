@@ -2,11 +2,25 @@ import React, {useState} from "react";
 import {View, Text, TouchableOpacity, TextInput, Pressable, Linking} from "react-native";
 import {styles} from "./styles";
 import {colors} from "../../../../../utils/colors";
+import {request} from "../../../../../utils/request";
+import axios from "axios";
 
 const CellphoneStep = ({navigation}) => {
     const [focus, setFocus] = useState(false);
     const customStyle = focus ? styles.textInputFocus : styles.textInput
 
+    const handleLogin = async () => {
+
+        try {
+            const response = await request('v1/auth/join/cellphone-step', 'post', {
+                cellphone: '09374802160'
+            })
+            console.log(response.data)
+        }catch (error){
+            console.log(error)
+        }
+
+    }
     return (
         <View style={styles.container}>
 
@@ -24,13 +38,15 @@ const CellphoneStep = ({navigation}) => {
                     keyboardType={'number-pad'}
                 />
 
-                <Text style={{...styles.descriptionText, marginTop: 20,alignItems:'center'}}>
+                <Text style={{...styles.descriptionText, marginTop: 20, alignItems: 'center'}}>
 
-                    <Pressable style={{alignItems:'center'}} onPress={()=>Linking.openURL('https://support.divar.ir/b/support-users/fa/kb/articles/article-105')}>
+                    <Pressable style={{alignItems: 'center'}}
+                               onPress={() => Linking.openURL('https://support.divar.ir/b/support-users/fa/kb/articles/article-105')}>
                         <Text style={{color: colors.red}}>شرایط و قوانین استفاده</Text>
                     </Pressable>
                     و
-                    <Pressable onPress={()=>Linking.openURL('https://support.divar.ir/b/support-users/fa/kb/articles/article-37')}>
+                    <Pressable
+                        onPress={() => Linking.openURL('https://support.divar.ir/b/support-users/fa/kb/articles/article-37')}>
                         <Text style={{color: colors.red}}>سیاست نامه ی حریم خصوصی</Text>
                     </Pressable>
                     دیوار را می پذیرم.
@@ -40,7 +56,7 @@ const CellphoneStep = ({navigation}) => {
             </View>
 
             <View style={styles.btnWrapper}>
-                <TouchableOpacity onPress={() => navigation.navigate('CodeStep')} activeOpacity={0.9}
+                <TouchableOpacity onPress={handleLogin} activeOpacity={0.9}
                                   style={styles.btn}>
                     <Text style={styles.btnText}>بعدی</Text>
                 </TouchableOpacity>
