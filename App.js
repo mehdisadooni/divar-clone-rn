@@ -7,8 +7,9 @@ import * as SplashScreen from "expo-splash-screen";
 import 'react-native-gesture-handler';
 
 
-
 SplashScreen.preventAutoHideAsync().then(r => console.log(r));
+
+export const UserContext = React.createContext(null)
 
 const App = () => {
 
@@ -18,6 +19,8 @@ const App = () => {
     }, [])
 
     const [appIsReady, setAppIsReady] = useState(false);
+    const [user, setUser] = useState();
+
 
     useEffect(() => {
         async function prepare() {
@@ -60,7 +63,9 @@ const App = () => {
 
     return (
         <SafeAreaProvider onLayout={onLayoutRootView}>
-            <Routes/>
+            <UserContext.Provider value={{user, setUser}}>
+                <Routes/>
+            </UserContext.Provider>
         </SafeAreaProvider>
     );
 }

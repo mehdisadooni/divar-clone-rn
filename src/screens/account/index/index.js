@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import {Text, View, TouchableOpacity, ScrollView, RefreshControl} from "react-native";
 import {styles} from "./styles";
 import AccountMenu from "../../../components/AccountItem";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import {colors} from "../../../utils/colors";
+import {UserContext} from "../../../../App";
 
 const AccountIndex = ({navigation}) => {
 
-    let user;
+    const {user} = useContext(UserContext);
+
     const [refreshing, setRefreshing] = useState(false);
 
     const handleRefreshing = () => {

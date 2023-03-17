@@ -3,7 +3,6 @@ import {View, Text, TouchableOpacity, TextInput, Pressable, Linking} from "react
 import {styles} from "./styles";
 import {colors} from "../../../../../utils/colors";
 import {request} from "../../../../../utils/request";
-import axios from "axios";
 
 const CellphoneStep = ({navigation}) => {
     const [focus, setFocus] = useState(false);
